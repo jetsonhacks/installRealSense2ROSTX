@@ -1,0 +1,31 @@
+Additional Notes:
+
+See: https://github.com/intel-ros/realsense/tree/2.0.3
+
+If you want to edit camera parameters using a GUI and/or use RViz:
+
+$ sudo apt-get install ros-kinetic-rviz
+$ sudo apt-get install ros-kinetic-rqt-reconfigure
+
+To adjust camera parameters after the realsense node has been launched:
+
+$ rosrun rqt_reconfigure rqt_reconfigure
+
+To start the camera node in ROS, plug in the camera, then type the following command:
+
+$ roslaunch realsense2_camera rs_camera.launch
+
+This will stream all camera sensors and publish on the appropriate ROS topics.
+
+Other stream resolutions and frame rates can optionally be provided as parameters to the 'rs_camera.launch' file.
+
+RGBD Point Cloud
+
+You can start the camera node and make it publish the RGBD point cloud using aligned depth topic.
+
+$ roslaunch realsense2_camera rs_rgbd.launch
+
+Here is an example of how to start the camera node and make it publish the aligned depth stream to other available streams such as color or infra-red.
+
+roslaunch realsense2_camera rs_aligned_depth.launch
+
