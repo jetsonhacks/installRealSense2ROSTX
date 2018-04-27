@@ -62,19 +62,16 @@ fi
 echo "Starting installation of librealsense"
 
 cd $INSTALLDIR
-# The current ROS version of librealsense
-sudo apt-get install ros-kinetic-librealsense -y
-
-cd $INSTALLDIR
 echo "Starting installation of RealSense ROS package"
 
 # Update the dependencies database
 rosdep update
-
+echo "Cloning Intel ROS realsense package"
 git clone https://github.com/intel-ros/realsense.git
 cd realsense
 git checkout 2.0.3
 cd ../..
+echo "Making Intel ROS realsense"
 sudo rosdep -y install --from-paths src --ignore-src --rosdistro kinetic
 catkin_make
 echo "RealSense 2 ROS Package installed"
