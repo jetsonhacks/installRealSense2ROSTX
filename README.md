@@ -7,7 +7,7 @@ This is the third step of a three step process.
 
 The first step requires a kernel modification. librealsense 2 requires a modified kernel which modularizes uvcvideo and adds the RealSense video modes to the uvcvideo driver.
 
-The easiest way to accomplish this is to use the 'installLibrealsense2TX' repository on the Github JetsonHacks account (https://github.com/jetsonhacks/installLibrealsense2TX). There are scripts which download the kernel source, apply the necessary patches, make the kernel, and then copy the kernel images to the boot directory. There are also scripts to build the librealsense library itself, which is useful for testing purposes.
+The easiest way to accomplish this is to use the 'buildLibrealsense2TX' repository on the Github JetsonHacks account (https://github.com/jetsonhacks/buildLibrealsense2TX). There are scripts which download the kernel source, apply the necessary patches, make the kernel, and then copy the kernel images to the boot directory. There are also scripts to build the librealsense library itself, which is useful for testing purposes.
 
 The second step is to install ROS on the Jetson TX. There are convenience scripts to help do this on the Github JetsonHacks account in the installROSTX2 repository (https://github.com/jetsonhacks/installROSTX2) or installROSTX1 repository (https://github.com/jetsonhacks/installROSTX1). Note that the repository installs ros-base, if other configurations such as ros-desktop are desired, the scripts can do that through the command line parameters.
 
