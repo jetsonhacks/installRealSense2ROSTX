@@ -1,7 +1,7 @@
 # installRealSense2ROSTX
 Install the Intel RealSense Camera package for ROS on the NVIDIA Jetson TX Development Kit
-MIT License
-Copyright (c) 2018-19 Jetsonhacks
+<br>MIT License
+<br>Copyright (c) 2018-19 Jetsonhacks
 
 The installLibRealSenseROS script will install librealsense and realsense_camera as ROS packages. These scripts have been tested with a RealSense D435 camera.
 
@@ -25,10 +25,10 @@ This installs RealSense ROS version 2.0.
 
 <h3>Releases:</h3>
 
-<b>February, 2019<b>
+<b>February, 2019</b>
 * v1.1
 * Add support for catkin build workspaces (Thanks to Johann Lange)
 
-<b>June, 2018<b>
+<b>June, 2018</b>
 * v1.0
 * Initial Release
