@@ -35,9 +35,10 @@ if [ -e "$DEFAULTDIR" ] ; then
 	# This appears to be a Catkin_Workspace
 	echo "Found catkin workspace in directory: $DEFAULTDIR"
   else
-	echo "$DEFAULTDIR does not appear to be a Catkin Workspace"
-        echo "The directory does not contain the hidden file .catkin_workspace or .catkin_tools"
-	echo "Terminating Installation"
+	echo "$DEFAULTDIR does not appear to be a Catkin Workspace."
+        echo "The directory does not contain the hidden file .catkin_workspace or .catkin_tools."
+	echo "This does not appear to be a proper ROS installation."
+	echo "Terminating Installation."
 	exit 1
   fi
 else 
@@ -81,6 +82,6 @@ if [ -e "$CATKIN_BUILD_WORKSPACEHIDDEN" ] ; then
 	catkin build
 	echo "RealSense 2 ROS Package installed"
 else
-	echo "Error: couldn't deciede to use catkin_make or atkin build"
+	echo "Error: Could not decide to use catkin_make or catkin build"
 	echo "Aborting..."
 fi
