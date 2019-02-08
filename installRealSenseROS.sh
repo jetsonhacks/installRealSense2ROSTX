@@ -30,12 +30,13 @@ echo "DEFAULTDIR: $DEFAULTDIR"
 if [ -e "$DEFAULTDIR" ] ; then
   echo "$DEFAULTDIR exists" 
   CATKIN_WORKSPACEHIDDEN=$DEFAULTDIR/.catkin_workspace
-  if [ -e "$CATKIN_WORKSPACEHIDDEN" ] ; then
+  CATKIN_BUILD_WORKSPACEHIDDEN=$DEFAULTDIR/.catkin_tools
+  if [ -e "$CATKIN_WORKSPACEHIDDEN" ] || [ -e "$CATKIN_BUILD_WORKSPACEHIDDEN" ] ; then
 	# This appears to be a Catkin_Workspace
 	echo "Found catkin workspace in directory: $DEFAULTDIR"
   else
 	echo "$DEFAULTDIR does not appear to be a Catkin Workspace"
-        echo "The directory does not contain the hidden file .catkin_workspace"
+        echo "The directory does not contain the hidden file .catkin_workspace or .catkin_tools"
 	echo "Terminating Installation"
 	exit 1
   fi
@@ -73,6 +74,13 @@ git checkout 2.0.3
 cd ../..
 echo "Making Intel ROS realsense"
 sudo rosdep -y install --from-paths src --ignore-src --rosdistro kinetic
-catkin_make
-echo "RealSense 2 ROS Package installed"
-
+if [ -e "$CATKIN_WORKSPACEHIDDEN" ] ; then
+	catkin_make
+	echo "RealSense 2 ROS Package installed"
+if [ -e "$CATKIN_BUILD_WORKSPACEHIDDEN" ] ; then
+	catkin build
+	echo "RealSense 2 ROS Package installed"
+else
+	echo "Error: couldn't deciede to use catkin_make or atkin build"
+	echo "Aborting..."
+fi
