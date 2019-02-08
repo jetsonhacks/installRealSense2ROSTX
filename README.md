@@ -17,6 +17,12 @@ To install:
 
 $ ./installRealSenseROS.sh \<catkin_ws_name\>
 
-The script 'setupTX.sh' simply turns off the USB autosuspend setting on the Jetson TX2 so that the camera is always available. 
+The script 'setupTX.sh' simply turns off the USB autosuspend setting on the Jetson TX so that the camera is always available. 
 
 This installs RealSense ROS version 2.0. 
+
+<h3>Releases:</h3>
+
+<b>June, 2018<b>
+* v1.0
+* Initial Release
